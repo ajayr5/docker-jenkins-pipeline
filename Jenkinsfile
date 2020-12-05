@@ -16,7 +16,7 @@ node {
   
   stage('Push Docker Image') {
     dir('webapp') {
-        docker.build("ajayr5/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
-      }
+         withDockerRegistry(credentialsId: 'docker', url: '') {
+         dockerImage.push()
     } 
 }
