@@ -19,5 +19,6 @@ node {
          withDockerRegistry(credentialsId: 'docker', url: '') {
          dockerImage.push()
          }
+       }
     } 
 }
