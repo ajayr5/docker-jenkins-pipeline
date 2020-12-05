@@ -9,14 +9,14 @@ node {
 
   stage('Create Docker Image') {
     dir('webapp') {
-      docker.build("arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}")
+      docker.build("ajayr5/docker-jenkins-pipeline:${env.BUILD_NUMBER}")
     }
   }
 
   
   stage('Push Docker Image') {
     dir('webapp') {
-        docker.build("arungupta/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
+        docker.build("ajayr5/docker-jenkins-pipeline:${env.BUILD_NUMBER}").push()
       }
     } 
 }
